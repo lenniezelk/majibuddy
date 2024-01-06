@@ -16,6 +16,7 @@ const NavBar = ({ user }: NavBarProps) => {
             tabIndex={0}
             role="button"
             className="btn btn-ghost btn-circle avatar"
+            data-cy="avatar-btn"
           >
             <CircleUserRound />
           </div>
@@ -31,7 +32,7 @@ const NavBar = ({ user }: NavBarProps) => {
       ) : (
         <>
           <Link to="/login" className="link link-primary">
-            Login
+            Sign In
           </Link>
           <Link to="/join" className="link link-primary ml-4">
             Sign Up
