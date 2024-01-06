@@ -1,13 +1,11 @@
-import { Link } from "@remix-run/react";
+import { Form, Link } from "@remix-run/react";
 import { CircleUserRound } from "lucide-react";
 
-import { User } from "~/models/user.server";
+import { useOptionalUser } from "~/utils";
 
-interface NavBarProps {
-  user?: User;
-}
+const NavBar = () => {
+  const user = useOptionalUser();
 
-const NavBar = ({ user }: NavBarProps) => {
   return (
     <nav className="navbar justify-end">
       {user ? (
@@ -25,7 +23,9 @@ const NavBar = ({ user }: NavBarProps) => {
               <Link to="/profile">Profile</Link>
             </li>
             <li>
-              <Link to="/logout">Logout</Link>
+              <Form method="post" action="/logout">
+                <button type="submit">Logout</button>
+              </Form>
             </li>
           </ul>
         </div>

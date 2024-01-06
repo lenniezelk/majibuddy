@@ -4,8 +4,8 @@ import {
   Fit,
   Alignment,
   useStateMachineInput,
-} from '@rive-app/react-canvas';
-import { useEffect } from 'react';
+} from "@rive-app/react-canvas";
+import { useEffect } from "react";
 
 interface BuddyWidgetProps {
   level: number;
@@ -13,16 +13,18 @@ interface BuddyWidgetProps {
 
 const BuddyWidget = ({ level }: BuddyWidgetProps) => {
   const { RiveComponent, rive } = useRive({
-    src: '/majibuddy.riv',
-    stateMachines: 'water bottle',
-    artboard: 'Water Bottle',
+    src: "/majibuddy.riv",
+    stateMachines: "water bottle",
+    artboard: "Water Bottle",
     autoplay: true,
     layout: new Layout({
       fit: Fit.Contain,
       alignment: Alignment.Center,
     }),
   });
-  const levelInput = useStateMachineInput(rive, 'water bottle', 'level');
+
+  const levelInput = useStateMachineInput(rive, "water bottle", "level");
+
   useEffect(() => {
     if (levelInput) {
       levelInput.value = level;
