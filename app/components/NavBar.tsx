@@ -1,13 +1,15 @@
 import { Form, Link } from "@remix-run/react";
 import { CircleUserRound } from "lucide-react";
 
+import Logo from "~/components/Logo";
 import { useOptionalUser } from "~/utils";
 
 const NavBar = () => {
   const user = useOptionalUser();
 
   return (
-    <nav className="navbar justify-end">
+    <nav className="navbar justify-between">
+      <Logo />
       {user ? (
         <div className="dropdown dropdown-end">
           <div
@@ -30,14 +32,14 @@ const NavBar = () => {
           </ul>
         </div>
       ) : (
-        <>
+        <div>
           <Link to="/login" className="link link-primary">
             Sign In
           </Link>
           <Link to="/join" className="link link-primary ml-4">
             Sign Up
           </Link>
-        </>
+        </div>
       )}
     </nav>
   );

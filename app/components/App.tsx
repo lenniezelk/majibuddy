@@ -36,12 +36,9 @@ const App = () => {
         <div className="flex items-center justify-center pt-4">
           <Waba />
         </div>
-        <h1 className="text-5xl text-blue-500 font-bold pt-3 text-center">
-          MajiBuddy
-        </h1>
-        <h2 className="text-3xl text-blue-400 font-bold mt-7 text-center">
+        <h1 className="text-5xl text-blue-400 font-bold mt-7 text-center">
           Track your water intake.
-        </h2>
+        </h1>
         <div className="flex items-center mt-8 flex-col">
           <div>
             <Info
