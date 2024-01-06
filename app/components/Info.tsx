@@ -1,15 +1,16 @@
-import { MapPin, Goal, FileEdit, Edit } from 'lucide-react';
-import IconButton from './IconButton';
+import { MapPin, Goal, FileEdit } from "lucide-react";
 
-type InfoBase = {
+import IconButton from "./IconButton";
+
+interface InfoBase {
   cups: string;
   litres: string;
-};
+}
 
-type InfoProps = {
+interface InfoProps {
   dailyGoal: InfoBase;
   current: InfoBase;
-};
+}
 
 const Info = ({ dailyGoal, current }: InfoProps) => {
   const { cups: dailyGoalCups, litres: dailyGoalLitres } = dailyGoal;
@@ -20,7 +21,7 @@ const Info = ({ dailyGoal, current }: InfoProps) => {
       <div className="flex items-center">
         <Goal className="text-blue-500 mr-1" />
         <h3 className="text-xl">
-          Your Daily Goal:{' '}
+          Your Daily Goal:{" "}
           <span className="text-blue-500 font-bold">
             {dailyGoalCups} Cups({dailyGoalLitres}L)
           </span>
@@ -31,7 +32,7 @@ const Info = ({ dailyGoal, current }: InfoProps) => {
           title="Edit your daily goal"
           onClick={() => {
             const elem = document.getElementById(
-              'edit-daily-goal',
+              "edit-daily-goal",
             ) as HTMLDialogElement;
             if (elem) {
               elem.showModal();
@@ -43,7 +44,7 @@ const Info = ({ dailyGoal, current }: InfoProps) => {
         <MapPin className="text-blue-500 mr-1" />
 
         <h3 className="text-xl pt-1">
-          You are currently at:{' '}
+          You are currently at:{" "}
           <span className="text-blue-500 font-bold">
             {currentCups} Cups({currentLitres}L)
           </span>

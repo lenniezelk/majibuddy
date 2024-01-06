@@ -1,8 +1,8 @@
 import RiveButton from './RiveButton';
 
-type MinusButtonProps = {
+interface MinusButtonProps {
   onClick: () => void;
-};
+}
 
 const MinusButton = ({ onClick }: MinusButtonProps) => {
   return (

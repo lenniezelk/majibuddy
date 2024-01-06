@@ -1,8 +1,8 @@
-import RiveButton from './RiveButton';
+import RiveButton from "./RiveButton";
 
-type AddButtonProps = {
+interface AddButtonProps {
   onClick: () => void;
-};
+}
 
 const AddButton = ({ onClick }: AddButtonProps) => {
   return (
@@ -10,7 +10,7 @@ const AddButton = ({ onClick }: AddButtonProps) => {
       ariaLabel="Add Water"
       className="w-16 h-16 mr-4"
       file="/majibuddy.riv"
-      stateMachines={['State Machine 1']}
+      stateMachines={["State Machine 1"]}
       artboard="add"
       onClick={() => onClick()}
     />

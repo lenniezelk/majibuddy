@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-type EditDailyGoalProps = {
+interface EditDailyGoalProps {
   initialValue: number;
   onSave: (value: number) => void;
-};
+}
 
 const EditDailyGoal = ({ initialValue, onSave }: EditDailyGoalProps) => {
   const [value, setValue] = useState(initialValue);

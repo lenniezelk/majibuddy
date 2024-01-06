@@ -6,7 +6,7 @@ const Footer = () => {
         <a
           target="_blank"
           href="https://lkioi.hashnode.dev/"
-          className="underline"
+          className="underline" rel="noreferrer"
         >
           Leonard Kioi
         </a>

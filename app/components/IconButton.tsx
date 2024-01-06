@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 
-type IconButtonProps = {
+interface IconButtonProps {
   icon: React.ReactNode;
   onClick?: () => void;
   className?: string;
   title?: string;
-};
+}
 
 const IconButton = ({ icon, onClick, className, title }: IconButtonProps) => {
   return (

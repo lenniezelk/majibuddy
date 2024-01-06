@@ -61,10 +61,10 @@ type CupSizeKey = keyof typeof CupSize;
 type CupSizeValue = (typeof CupSize)[CupSizeKey];
 type CupSizeOption = CupSizeValue['sizes'][number];
 
-type CupSizeSelectProps = {
+interface CupSizeSelectProps {
   onSelect: (size: number) => void;
   value?: number;
-};
+}
 
 const CupSizeSelect = ({ onSelect, value }: CupSizeSelectProps) => {
   return (

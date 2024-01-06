@@ -1,14 +1,14 @@
 import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 import clsx from 'clsx';
 
-type RiveButtonProps = {
+interface RiveButtonProps {
   onClick: () => void;
   file: string;
   stateMachines: string[];
   artboard: string;
   ariaLabel?: string;
   className?: string;
-};
+}
 
 const RiveButton = ({
   ariaLabel,

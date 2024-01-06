@@ -7,9 +7,9 @@ import {
 } from '@rive-app/react-canvas';
 import { useEffect } from 'react';
 
-type BuddyWidgetProps = {
+interface BuddyWidgetProps {
   level: number;
-};
+}
 
 const BuddyWidget = ({ level }: BuddyWidgetProps) => {
   const { RiveComponent, rive } = useRive({
