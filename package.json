@@ -18,7 +18,9 @@
     "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run",
     "generate:dev": "prisma generate dev",
     "generate:prod": "prisma generate prod",
-    "studio": "prisma studio"
+    "migrate:dev": "prisma migrate dev",
+    "studio": "prisma studio",
+    "seed": "prisma db seed"
   },
   "prettier": {},
   "eslintIgnore": [
@@ -27,7 +29,7 @@
     "/public/build"
   ],
   "dependencies": {
-    "@prisma/client": "^4.16.2",
+    "@prisma/client": "^5.8.1",
     "@remix-run/css-bundle": "^2.4.1",
     "@remix-run/node": "^2.4.1",
     "@remix-run/react": "^2.4.1",
@@ -82,7 +84,7 @@
     "postcss": "^8.4.31",
     "prettier": "3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
-    "prisma": "^4.16.2",
+    "prisma": "^5.8.1",
     "start-server-and-test": "^2.0.1",
     "tailwindcss": "^3.3.3",
     "ts-node": "^10.9.1",

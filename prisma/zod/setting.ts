@@ -1,6 +1,5 @@
-import * as z from "zod";
-
-import { CompleteUser, RelatedUserModel } from "./index";
+import * as z from "zod"
+import { CompleteUser, RelatedUserModel } from "./index"
 
 export const SettingModel = z.object({
   id: z.string(),
@@ -9,36 +8,17 @@ export const SettingModel = z.object({
   userId: z.string(),
   key: z.string(),
   value: z.string(),
-});
+})
 
 export interface CompleteSetting extends z.infer<typeof SettingModel> {
-  user: CompleteUser;
+  user: CompleteUser
 }
-
-export const SettingCreate = SettingModel.omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
-
-export type SettingCreate = z.infer<typeof SettingCreate>;
-
-export const SettingUpdate = SettingModel.omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-  userId: true,
-}).partial();
-
-export type SettingUpdate = z.infer<typeof SettingUpdate>;
 
 /**
  * RelatedSettingModel contains all relations on your model in addition to the scalars
  *
  * NOTE: Lazy required in case of potential circular dependencies within schema
  */
-export const RelatedSettingModel: z.ZodSchema<CompleteSetting> = z.lazy(() =>
-  SettingModel.extend({
-    user: RelatedUserModel,
-  }),
-);
+export const RelatedSettingModel: z.ZodSchema<CompleteSetting> = z.lazy(() => SettingModel.extend({
+  user: RelatedUserModel,
+}))

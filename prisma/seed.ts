@@ -24,19 +24,23 @@ async function seed() {
     },
   });
 
-  await prisma.setting.createMany({
-    data: [
-      {
-        userId: user.id,
-        key: "dailyGoal",
-        value: "2500",
-      },
-      {
-        userId: user.id,
-        key: "cupSize",
-        value: "355",
-      },
-    ],
+  const settingsData = [
+    {
+      userId: user.id,
+      key: "dailyGoal",
+      value: "2500",
+    },
+    {
+      userId: user.id,
+      key: "cupSize",
+      value: "355",
+    },
+  ];
+
+  settingsData.forEach(async (setting) => {
+    await prisma.setting.create({
+      data: setting,
+    });
   });
 
   console.log(`Database has been seeded. 🌱`);

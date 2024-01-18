@@ -12,18 +12,22 @@ export const createSetting = async ({ userId, key, value }: SettingCreate) => {
 };
 
 export const createDefaultSettings = async (userId: string) => {
-  await prisma.setting.createMany({
-    data: [
-      {
-        userId,
-        key: "dailyGoal",
-        value: "2500",
-      },
-      {
-        userId,
-        key: "cupSize",
-        value: "355",
-      },
-    ],
+  const settingsData = [
+    {
+      userId,
+      key: "dailyGoal",
+      value: "2500",
+    },
+    {
+      userId,
+      key: "cupSize",
+      value: "355",
+    },
+  ];
+
+  settingsData.forEach(async (setting) => {
+    await prisma.setting.create({
+      data: setting,
+    });
   });
 };

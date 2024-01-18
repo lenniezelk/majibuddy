@@ -1,11 +1,16 @@
 import { Form, Link } from "@remix-run/react";
+import { useLocation } from "@remix-run/react";
 import { CircleUserRound } from "lucide-react";
 
 import Logo from "~/components/Logo";
 import { useOptionalUser } from "~/utils";
 
 const NavBar = () => {
+  const location = useLocation();
   const user = useOptionalUser();
+
+  const isAuthPage =
+    location.pathname === "/login" || location.pathname === "/join";
 
   return (
     <nav className="navbar justify-between">
@@ -31,7 +36,7 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-      ) : (
+      ) : isAuthPage ? null : (
         <div>
           <Link to="/login" className="link link-primary">
             Sign In
