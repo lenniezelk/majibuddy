@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import clsx from "clsx";
 
 interface IconButtonProps {
   icon: React.ReactNode;
@@ -11,7 +11,7 @@ const IconButton = ({ icon, onClick, className, title }: IconButtonProps) => {
   return (
     <button
       className={clsx(
-        'p-2 rounded-full focus:outline-none hover:bg-blue-100',
+        "p-2 rounded-full focus:outline-none hover:bg-blue-100",
         className,
       )}
       onClick={onClick}

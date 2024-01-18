@@ -1,13 +1,14 @@
-import * as z from "zod"
-import { CompleteUser, RelatedUserModel } from "./index"
+import * as z from "zod";
+
+import { CompleteUser, RelatedUserModel } from "./index";
 
 export const PasswordModel = z.object({
   hash: z.string(),
   userId: z.string(),
-})
+});
 
 export interface CompletePassword extends z.infer<typeof PasswordModel> {
-  user: CompleteUser
+  user: CompleteUser;
 }
 
 /**
@@ -15,6 +16,8 @@ export interface CompletePassword extends z.infer<typeof PasswordModel> {
  *
  * NOTE: Lazy required in case of potential circular dependencies within schema
  */
-export const RelatedPasswordModel: z.ZodSchema<CompletePassword> = z.lazy(() => PasswordModel.extend({
-  user: RelatedUserModel,
-}))
+export const RelatedPasswordModel: z.ZodSchema<CompletePassword> = z.lazy(() =>
+  PasswordModel.extend({
+    user: RelatedUserModel,
+  }),
+);

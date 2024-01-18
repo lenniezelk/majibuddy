@@ -1,5 +1,5 @@
-import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
-import clsx from 'clsx';
+import { Alignment, Fit, Layout, useRive } from "@rive-app/react-canvas";
+import clsx from "clsx";
 
 interface RiveButtonProps {
   onClick: () => void;
@@ -31,7 +31,7 @@ const RiveButton = ({
   return (
     <button
       aria-label={ariaLabel}
-      className={clsx(['border-0 cursor-pointer', className])}
+      className={clsx(["border-0 cursor-pointer", className])}
       onClick={onClick}
     >
       <RiveComponent />

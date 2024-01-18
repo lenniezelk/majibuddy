@@ -1,4 +1,4 @@
-import RiveButton from './RiveButton';
+import RiveButton from "./RiveButton";
 
 interface MinusButtonProps {
   onClick: () => void;
@@ -10,7 +10,7 @@ const MinusButton = ({ onClick }: MinusButtonProps) => {
       ariaLabel="Reduce Water"
       className="w-16 h-16 ml-4"
       file="/majibuddy.riv"
-      stateMachines={['State Machine 1']}
+      stateMachines={["State Machine 1"]}
       artboard="minus"
       onClick={() => onClick()}
     />

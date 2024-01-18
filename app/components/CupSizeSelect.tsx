@@ -1,65 +1,65 @@
 const CupSize = {
   smallCup: {
-    label: 'Small Cup',
+    label: "Small Cup",
     sizes: [
-      { size: '8 oz', ml: 240 },
-      { size: '6 oz', ml: 180 },
+      { size: "8 oz", ml: 240 },
+      { size: "6 oz", ml: 180 },
     ],
   },
   standardCup: {
-    label: 'Standard Cup',
+    label: "Standard Cup",
     sizes: [
-      { size: '12 oz', ml: 355 },
-      { size: '16 oz', ml: 473 },
+      { size: "12 oz", ml: 355 },
+      { size: "16 oz", ml: 473 },
     ],
   },
   mediumCup: {
-    label: 'Medium Cup',
-    sizes: [{ size: '20 oz', ml: 590 }],
+    label: "Medium Cup",
+    sizes: [{ size: "20 oz", ml: 590 }],
   },
   largeCup: {
-    label: 'Large Cup',
+    label: "Large Cup",
     sizes: [
-      { size: '24 oz', ml: 710 },
-      { size: '32 oz', ml: 946 },
+      { size: "24 oz", ml: 710 },
+      { size: "32 oz", ml: 946 },
     ],
   },
   sportsBottle: {
-    label: 'Sports Bottle',
+    label: "Sports Bottle",
     sizes: [
-      { size: '16 oz', ml: 473 },
-      { size: '24 oz', ml: 710 },
-      { size: '32 oz', ml: 946 },
+      { size: "16 oz", ml: 473 },
+      { size: "24 oz", ml: 710 },
+      { size: "32 oz", ml: 946 },
     ],
   },
   mug: {
-    label: 'Mug',
+    label: "Mug",
     sizes: [
-      { size: '8 oz', ml: 240 },
-      { size: '12 oz', ml: 355 },
+      { size: "8 oz", ml: 240 },
+      { size: "12 oz", ml: 355 },
     ],
   },
   travelTumbler: {
-    label: 'Travel Tumbler',
+    label: "Travel Tumbler",
     sizes: [
-      { size: '16 oz', ml: 473 },
-      { size: '20 oz', ml: 590 },
-      { size: '24 oz', ml: 710 },
+      { size: "16 oz", ml: 473 },
+      { size: "20 oz", ml: 590 },
+      { size: "24 oz", ml: 710 },
     ],
   },
   waterBottle: {
-    label: 'Water Bottle',
+    label: "Water Bottle",
     sizes: [
-      { size: '500 ml', ml: 500 },
-      { size: '750 ml', ml: 750 },
-      { size: '1 liter', ml: 1000 },
+      { size: "500 ml", ml: 500 },
+      { size: "750 ml", ml: 750 },
+      { size: "1 liter", ml: 1000 },
     ],
   },
 } as const;
 
 type CupSizeKey = keyof typeof CupSize;
 type CupSizeValue = (typeof CupSize)[CupSizeKey];
-type CupSizeOption = CupSizeValue['sizes'][number];
+type CupSizeOption = CupSizeValue["sizes"][number];
 
 interface CupSizeSelectProps {
   onSelect: (size: number) => void;
@@ -95,7 +95,7 @@ const CupSizeSelect = ({ onSelect, value }: CupSizeSelectProps) => {
 };
 
 const OptionLabel = ({ option }: { option: CupSizeOption }) => {
-  if (option.size.endsWith('oz')) {
+  if (option.size.endsWith("oz")) {
     return `${option.size} (${option.ml}ml)`;
   }
   return `${option.size}`;

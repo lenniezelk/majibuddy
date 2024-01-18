@@ -1,17 +1,25 @@
-import * as z from "zod"
-import { CompletePassword, RelatedPasswordModel, CompleteSetting, RelatedSettingModel, CompleteEntry, RelatedEntryModel } from "./index"
+import * as z from "zod";
+
+import {
+  CompletePassword,
+  RelatedPasswordModel,
+  CompleteSetting,
+  RelatedSettingModel,
+  CompleteEntry,
+  RelatedEntryModel,
+} from "./index";
 
 export const UserModel = z.object({
   id: z.string(),
   email: z.string(),
   createdAt: z.date(),
   updatedAt: z.date(),
-})
+});
 
 export interface CompleteUser extends z.infer<typeof UserModel> {
-  password?: CompletePassword | null
-  settings: CompleteSetting[]
-  entries: CompleteEntry[]
+  password?: CompletePassword | null;
+  settings: CompleteSetting[];
+  entries: CompleteEntry[];
 }
 
 /**
@@ -19,8 +27,10 @@ export interface CompleteUser extends z.infer<typeof UserModel> {
  *
  * NOTE: Lazy required in case of potential circular dependencies within schema
  */
-export const RelatedUserModel: z.ZodSchema<CompleteUser> = z.lazy(() => UserModel.extend({
-  password: RelatedPasswordModel.nullish(),
-  settings: RelatedSettingModel.array(),
-  entries: RelatedEntryModel.array(),
-}))
+export const RelatedUserModel: z.ZodSchema<CompleteUser> = z.lazy(() =>
+  UserModel.extend({
+    password: RelatedPasswordModel.nullish(),
+    settings: RelatedSettingModel.array(),
+    entries: RelatedEntryModel.array(),
+  }),
+);
