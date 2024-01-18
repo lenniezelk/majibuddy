@@ -24,20 +24,19 @@ async function seed() {
     },
   });
 
-  await prisma.note.create({
-    data: {
-      title: "My first note",
-      body: "Hello, world!",
-      userId: user.id,
-    },
-  });
-
-  await prisma.note.create({
-    data: {
-      title: "My second note",
-      body: "Hello, world!",
-      userId: user.id,
-    },
+  await prisma.setting.createMany({
+    data: [
+      {
+        userId: user.id,
+        key: "dailyGoal",
+        value: "2500",
+      },
+      {
+        userId: user.id,
+        key: "cupSize",
+        value: "355",
+      },
+    ],
   });
 
   console.log(`Database has been seeded. 🌱`);

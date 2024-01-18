@@ -7,6 +7,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator zod {
+  provider = "zod-prisma"
+  output   = "./zod"
+}
+
 model User {
   id    String @id @default(cuid())
   email String @unique
