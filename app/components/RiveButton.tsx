@@ -30,9 +30,10 @@ const RiveButton = ({
   });
   return (
     <button
-      aria-label={ariaLabel}
+      title={ariaLabel}
       className={clsx(["border-0 cursor-pointer", className])}
       onClick={onClick}
+      onTouchStart={onClick}
     >
       <RiveComponent />
     </button>
