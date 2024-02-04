@@ -32,7 +32,7 @@ const BuddyWidget = ({ level }: BuddyWidgetProps) => {
   }, [levelInput, level]);
 
   return (
-    <div className="w-[400px] h-[400px]">
+    <div className="w-[200px] h-[200px] lg:w-[400px] lg:h-[400px]">
       <RiveComponent />
     </div>
   );
